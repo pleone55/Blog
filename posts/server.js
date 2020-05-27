@@ -24,14 +24,16 @@ app.post('/posts', async(req, res) => {
 
     //attach the id to the post generated
     posts[id] = {
-        id, title
+        id, 
+        title
     };
 
     await axios.post("http://localhost:7005/events", {
         //set type of event being passed
         type: 'PostCreated',
         data: {
-            id, title
+            id, 
+            title
         }
     })
 
